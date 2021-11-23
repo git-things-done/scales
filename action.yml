@@ -1,0 +1,21 @@
+name: “Scales” for Git Things Done
+description: >
+  A weight tracker and analysis tool for your GitTD workflow.
+inputs:
+  token:
+    description: Usually `secrets.GITHUB_TOKEN`.
+    default: ${{ github.token }}
+  height:
+    description: eg. 5'7"
+    required: false
+outputs:
+  bmi:
+    description: Your BMI if you provided your height.
+runs:
+  using: docker
+  image: Dockerfile
+  # ^^ because we want node 16 so we can use modern features
+
+branding:
+  icon: check-square
+  color: green
